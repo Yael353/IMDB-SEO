@@ -1,3 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import movieSlice from "../src/redux/fetures/movieSlice";
 
-const store = configureStore();
+export const store = configureStore({
+  reducer: {
+    movies: movieSlice,
+  },
+});
