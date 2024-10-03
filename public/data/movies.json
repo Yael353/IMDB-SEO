@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "img": "",
+    "title": "Avengers: Infinity War",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "about": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
+    "actors": ["Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"],
+    "rating": 8.5
+  },
+  {
+    "id": 2,
+    "img": "",
+    "title": "The Godfather",
+    "genre": ["Crime", "Drama"],
+    "about": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "actors": ["Marlon Brando", "Al Pacino", "James Caan"],
+    "rating": 9.2
+  },
+  {
+    "id": 3,
+    "img": "",
+    "title": "Inception",
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "about": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+    "rating": 8.8
+  },
+  {
+    "id": 4,
+    "img": "",
+    "title": "The Dark Knight",
+    "genre": ["Action", "Crime", "Drama"],
+    "about": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+    "rating": 9.0
+  },
+  {
+    "id": 5,
+    "img": "",
+    "title": "Pulp Fiction",
+    "genre": ["Crime", "Drama"],
+    "about": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "actors": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+    "rating": 8.9
+  }
+]

@@ -1,42 +1,71 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
   movies: [],
-  status: "idle",
+  loading: false,
   error: null,
 };
 
 export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {
-  const response = await fetch(
-    `https://imdb-top-100-movies.p.rapidapi.com/${import.meta.env.movieKey}`
-  );
-
-  const data = await response.json();
-  console.log(data);
-
-  return data;
+  try {
+    const response = await fetch("data/movies.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch movies.");
+    }
+    const data = await response.json();
+    console.log("data: ", data);
+    return data;
+  } catch (error) {
+    return error.message || error;
+  }
 });
 
-//Slice
+// export const fetchMovies = createAsyncThunk(
+//   "movies/fetchMovies",
+//   async (_, { rejectWithValue }) => {
+//     const url = "https://imdb-top-100-movies.p.rapidapi.com/";
+//     const options = {
+//       method: "GET",
+//       headers: {
+//         "x-rapidapi-key": import.meta.env.VITE_MOVIE_KEY,
+//         "x-rapidapi-host": import.meta.env.VITE_MOVIE_HOST,
+//       },
+//     };
 
+//     try {
+//       const response = await axios.request(url, options);
+
+//       console.log("resp data: ", response.data);
+//       return response.data;
+//     } catch (error) {
+//       return rejectWithValue(
+//         error.response ? error.response.data : error.message
+//       );
+//     }
+//   }
+// );
+
+//Slice
 const movieSlice = createSlice({
   name: "movies",
   initialState,
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchMovies.pending, (state) => {
-        state.status = "loading";
+        state.loading = true;
+        state.error = null;
       })
 
       .addCase(fetchMovies.fulfilled, (state, action) => {
+        state.loading = false;
         state.movies = action.payload;
-        state.status = "succeded";
       })
 
       .addCase(fetchMovies.rejected, (state, action) => {
-        state.movies = [];
-        state.status = "failed";
-        state.error = action.error.message;
+        state.loading = false;
+        state.error = action.payload || "Something went wrong";
       });
   },
 });
