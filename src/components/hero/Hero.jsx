@@ -2,9 +2,13 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="relative">
-      <div className="max-h-[600px] w-full">
-        <img src="/img/hero/hero.jpg" alt="Watching a movie" />
+    <div className="relative h-auto">
+      <div className="max-h-screen w-full">
+        <img
+          className="w-full h-full object-cover"
+          src="/img/hero/hero.jpg"
+          alt="Watching a movie"
+        />
       </div>
       <div className="absolute text-white top-4 left-4">
         <h1
@@ -13,13 +17,15 @@ function Hero() {
         >
           The Movie DB
         </h1>
-        <p className="max-w-[400px] pt-10">
+        <p className="max-w-[400px] pt-4 sm:pt-10">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
           veritatis, ab quasi aut animi nam, consectetur molestias est repellat
-          quidem exercitationem fuga iste eum, illum earum qui. 
+          quidem exercitationem fuga iste eum, illum earum qui.
         </p>
         {/**call to action */}
-        <button className="border px-6 py-2 bg-white text-black uppercase tracking-wider mt-6 font-semibold">Something here</button>
+        <button className="border px-6 py-2 bg-white text-black uppercase tracking-wider mt-6 font-semibold">
+          Something here
+        </button>
       </div>
     </div>
   );

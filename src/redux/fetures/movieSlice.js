@@ -14,7 +14,7 @@ export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {
       throw new Error("Failed to fetch movies.");
     }
     const data = await response.json();
-    console.log("data: ", data);
+    // console.log("data: ", data);
     return data;
   } catch (error) {
     return error.message || error;

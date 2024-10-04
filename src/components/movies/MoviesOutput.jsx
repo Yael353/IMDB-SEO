@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { fetchMovies } from "../../redux/fetures/movieSlice";
 import { useSelector, useDispatch } from "react-redux";
+import { FaRegStar } from "react-icons/fa";
+
 
 export default function MoviesOutput() {
   const dispatch = useDispatch();
@@ -20,10 +22,10 @@ export default function MoviesOutput() {
   }
 
   return (
-    <div className="pt-80">
-      <h1>Top 100 Movies!</h1>
+    <div className="h-auto py-10 px-4 2xl:px-0">
+      <h1 className="text-white text-2xl pb-10 2xl:text-center 2xl:text-4xl">Top Movies!</h1>
       <div>
-        <ul className="bg-black flex flex-wrap gap-10">
+        <ul className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6">
           {/* {movies &&
             movies
               .slice(0, 2)
@@ -32,24 +34,41 @@ export default function MoviesOutput() {
             movies.map((movie) => (
               <li
                 key={movie.id}
-                className="flex flex-col max-w-[600px] mx-auto bg-white px-10 py-20 text-black shadow-yellow-400 shadow-md"
+                className="flex flex-col w-full py-6 h-auto mx-auto bg-white text-black sm:shadow-yellow-400/70 shadow-md"
               >
-                <div>
-                  <div>
-                    <img src={movie.img} alt={movie.title} />
+                <div className="h-full px-4">
+                  <div className="w-full h-[300px]">
+                    <img
+                      className="w-full h-full object-cover hover:object-contain"
+                      src={movie.img}
+                      alt={movie.title}
+                    />
                   </div>
-                  <h2>{movie.title}</h2>
-                  <p>Genre: {movie.genre.join(", ")}</p>
+                  <div className="relative">
+                    <h2 className="text-center text-xl font-semibold py-6">
+                      {movie.title}
+                    </h2>
+                    <p>
+                      <span className="font-semibold text-lg py-1">Genre:</span>{" "}
+                      {movie.genre.join(", ")}
+                    </p>
 
-                  <p>{movie.rating}</p>
-                  <ul>
-                    {movie.actors.map((actor, index) => (
-                      <li key={index}>{actor}</li>
-                    ))}
-                  </ul>
-                  <div>
-                    <h3>Plot:</h3>
-                    <p>{movie.about}</p>
+                    <i className="absolute flex flex-row items-center top-2 right-0">
+                      Rating: {movie.rating} <FaRegStar className="pl-1"  size={20}/>
+
+                    </i>
+                    <ul>
+                      <span className="font-semibold text-lg py-1">
+                        Actors:
+                      </span>
+                      {movie.actors.map((actor, index) => (
+                        <li key={index}> {actor}</li>
+                      ))}
+                    </ul>
+                    <div>
+                      <span className="text-lg font-semibold py-1">Plot:</span>
+                      <p>{movie.about}</p>
+                    </div>
                   </div>
                 </div>
               </li>
