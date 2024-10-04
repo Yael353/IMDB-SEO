@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const highlightSearchTerm = (text, searchTerm) => {
   if (!searchTerm) return text; // Return org text if no search term
-  const regex = new RegExp(`(${searchTerm})`, "gi"); 
-  const parts = text.split(regex); 
+  const regex = new RegExp(`(${searchTerm})`, "gi");
+  const parts = text.split(regex);
   return parts.map((part, index) =>
     regex.test(part) ? (
       <strong key={index} className="font-bold">
@@ -35,31 +36,30 @@ function SearchOutput() {
       <div>
         <ul>
           {filteredMovies.map((movie) => (
-            <li
-              key={movie.id}
-              className="text-black flex flex-col py-2 border-b"
-            >
-              {/* <h2 className="font-semibold">{movie.title}</h2> */}
-              {/* <p>Genre: {movie.genre.join(", ")}</p>
+            <Link key={movie.id} to={`/movies/${movie.id}`}>
+              <li className="text-black flex flex-col py-2 border-b">
+                {/* <h2 className="font-semibold">{movie.title}</h2> */}
+                {/* <p>Genre: {movie.genre.join(", ")}</p>
               <p>Actors: {movie.actors.join(", ")}</p>
               <p>Rating: {movie.rating}</p> */}
-              <h2 className="font-semibold">
-                {highlightSearchTerm(movie.title, searchTerm)}
-              </h2>
-              <p>
-                Genre:{" "}
-                {movie.genre
-                  .map((g) => highlightSearchTerm(g, searchTerm))
-                  .reduce((prev, curr) => [prev, ", ", curr])}
-              </p>
-              <p>
-                Actors:{" "}
-                {movie.actors
-                  .map((actor) => highlightSearchTerm(actor, searchTerm))
-                  .reduce((prev, curr) => [prev, ", ", curr])}
-              </p>
-              <p>Rating: {movie.rating}</p>
-            </li>
+                <h2 className="font-semibold">
+                  {highlightSearchTerm(movie.title, searchTerm)}
+                </h2>
+                <p>
+                  Genre:{" "}
+                  {movie.genre
+                    .map((g) => highlightSearchTerm(g, searchTerm))
+                    .reduce((prev, curr) => [prev, ", ", curr])}
+                </p>
+                <p>
+                  Actors:{" "}
+                  {movie.actors
+                    .map((actor) => highlightSearchTerm(actor, searchTerm))
+                    .reduce((prev, curr) => [prev, ", ", curr])}
+                </p>
+                <p>Rating: {movie.rating}</p>
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
