@@ -1,6 +1,7 @@
 import Hero from "./components/hero/Hero";
 import MoviesOutput from "./components/movies/MoviesOutput";
 import SearchBar from "./components/search/SearchBar";
+import SingleMoviePage from "./components/movies/SingleMoviePage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <SearchBar />
         <MoviesOutput />
       </div>
+      <SingleMoviePage />
     </>
   );
 }
