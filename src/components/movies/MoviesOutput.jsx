@@ -23,7 +23,6 @@ export default function MoviesOutput() {
 
   return (
     <div className="h-auto py-10 px-4 2xl:px-0">
-      <h1 className="text-white text-2xl pb-10 2xl:text-center 2xl:text-4xl">Top Movies!</h1>
       <div>
         <ul className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6">
           {/* {movies &&

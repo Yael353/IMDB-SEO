@@ -124,5 +124,14 @@
     "about": "A Muslim ambassador travels to the frozen North where he joins a group of Vikings to fight a mysterious and deadly foe.",
     "actors": ["Antonio Banderas", "Diane Venora", "Vladimir Kulich"],
     "rating": 6.6
+  },
+  {
+    "id": 15,
+    "img": "/img/war.jpg", 
+    "title": "All Quiet on the Western Front",
+    "genre": ["War", "Drama"],
+    "about": "A young German soldier's terrifying experiences and distress on the Western Front during World War I. As he and his comrades struggle to survive the trenches, they face the harsh realities of war and its devastating impact on their youth and innocence.",
+    "actors": ["Felix Kammerer", "Albrecht Schuch", "Aaron Hilmer", "Moritz Klaus", "Daniel Brühl"],
+    "rating": 7.8
   }
 ]
