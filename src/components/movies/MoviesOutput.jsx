@@ -31,7 +31,7 @@ export default function MoviesOutput() {
               .map((movie) => <li key={movie.id}>{movie.title}</li>)} */}
           {movies &&
             movies.map((movie) => (
-              <Link key={movie.id} to={movie.id}>
+              <Link key={movie.id} to={`/movies/${movie.id}`}>
                 <li className="flex flex-col w-full py-6 h-auto mx-auto bg-white text-black sm:shadow-yellow-400/70 shadow-md">
                   <div className="h-full px-4">
                     <div className="w-full h-[300px]">

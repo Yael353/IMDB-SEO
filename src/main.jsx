@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "movies/:id", // Dynamisk route för specifik film baserat på IDelement:
+        path: "/movies/:id", // Dynamisk route för specifik film baserat på IDelement:
         element: <SingleMoviePage />,
       },
     ],
